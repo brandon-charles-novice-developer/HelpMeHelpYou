@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import AttainLogo from './layout/AttainLogo'
 
 const PASS_KEY = 'outcomehq_access'
 const VALID_HASH = 'Whaleinachinashop' // change this to set the password
@@ -31,14 +32,7 @@ export default function PasswordGate({ children }) {
     <div style={styles.page}>
       {/* Purple header bar matching Attain nav */}
       <div style={styles.header}>
-        <svg width="120" height="32" viewBox="0 0 120 32" fill="none">
-          <path d="M8.5 26L15.5 6h4l7 20h-3.8l-1.6-5H14l-1.6 5H8.5zm6.4-8h7.2L18.5 9.2h-.1L14.9 18z" fill="#fff"/>
-          <path d="M36 10.5v2.2h-3.8V22c0 .9.2 1.4.6 1.7.4.3 1 .4 1.8.4h1.4v2.5c-.7.1-1.5.2-2.2.2-1.6 0-2.8-.3-3.6-1-.8-.7-1.2-1.8-1.2-3.4V12.7h-2.7v-2.2H29l.8-4h2.4v4H36z" fill="#fff"/>
-          <path d="M38 10.5h3v2.4c.5-.8 1.1-1.5 1.9-2 .8-.5 1.7-.7 2.7-.7h.8v3h-1.2c-1.2 0-2.2.4-2.9 1.1-.7.7-1.1 1.8-1.1 3.3v9h-3.2V10.5z" fill="#fff"/>
-          <path d="M55.2 27H52v-2c-.6.7-1.3 1.3-2.1 1.7-.8.4-1.8.6-2.8.6-1.3 0-2.4-.3-3.2-.9-.8-.6-1.2-1.6-1.2-2.9 0-1.4.5-2.5 1.6-3.2 1.1-.7 2.6-1 4.6-1h3V18c0-.9-.3-1.6-.9-2.1-.6-.5-1.5-.7-2.6-.7-1 0-1.8.2-2.4.6-.6.4-1 1-1.1 1.7h-3.1c.2-1.4.8-2.5 2-3.3 1.1-.8 2.6-1.2 4.5-1.2 2 0 3.5.5 4.5 1.4 1 .9 1.5 2.3 1.5 4V27zm-3.1-5.5h-2.8c-1.2 0-2.1.2-2.7.6-.6.4-.9 1-.9 1.7 0 .7.3 1.2.8 1.6.5.4 1.2.5 2 .5 1.2 0 2.2-.3 2.9-1 .7-.7 1-1.6 1-2.8v-.6h-.3z" fill="#fff"/>
-          <path d="M58.5 5.5h3.2v3h-3.2v-3zm0 5h3.2V27h-3.2V10.5z" fill="#fff"/>
-          <path d="M65.5 10.5h3v2.2c.5-.8 1.2-1.4 2-1.8.8-.5 1.8-.7 2.9-.7 1.7 0 3.1.6 4.1 1.7 1 1.1 1.5 2.7 1.5 4.7V27h-3.2v-9.8c0-1.3-.3-2.3-1-3-.7-.7-1.6-1-2.7-1-1.2 0-2.1.4-2.8 1.2-.7.8-1 1.9-1 3.3V27h-3.2V10.5h.4z" fill="#fff"/>
-        </svg>
+        <AttainLogo height={28} color="#FFFFFF" />
       </div>
 
       {/* Hero section with purple gradient */}
