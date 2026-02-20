@@ -32,7 +32,7 @@ export default function PasswordGate({ children }) {
     <div style={styles.page}>
       {/* Purple header bar matching Attain nav */}
       <div style={styles.header}>
-        <AttainLogo height={28} color="#FFFFFF" />
+        <AttainLogo height={28} />
       </div>
 
       {/* Hero section with purple gradient */}

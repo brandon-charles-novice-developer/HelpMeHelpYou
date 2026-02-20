@@ -9,7 +9,7 @@ export default function Header({ mode, onModeChange }) {
     >
       {/* Left: Attain logo + OutcomeHQ wordmark */}
       <div className="flex items-center gap-4">
-        <AttainLogo height={22} color="#FFFFFF" />
+        <AttainLogo height={22} />
         <div
           className="h-5"
           style={{ width: 1, backgroundColor: 'rgba(255,255,255,0.15)' }}
