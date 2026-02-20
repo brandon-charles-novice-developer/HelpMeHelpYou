@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OutcomeHQ — Attain</title>
+    <script>
+      // GitHub Pages SPA redirect handler
+      (function() {
+        var q = new URLSearchParams(location.search);
+        var p = q.get('p');
+        if (p) {
+          q.delete('p');
+          var qs = q.toString();
+          history.replaceState(null, '', p + (qs ? '?' + qs : '') + location.hash);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
