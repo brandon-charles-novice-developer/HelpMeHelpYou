@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom'
+import PasswordGate from './components/PasswordGate'
 import AppShell from './components/layout/AppShell'
 import ExecutiveHome from './components/executive/ExecutiveHome'
 import ManagerHome from './components/manager/ManagerHome'
@@ -40,8 +41,10 @@ function AppInner() {
 
 export default function App() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
-      <AppInner />
-    </BrowserRouter>
+    <PasswordGate>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <AppInner />
+      </BrowserRouter>
+    </PasswordGate>
   )
 }
