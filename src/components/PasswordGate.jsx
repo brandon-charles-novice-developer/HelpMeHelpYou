@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 const PASS_KEY = 'outcomehq_access'
-const VALID_HASH = '2026' // change this to set the password
+const VALID_HASH = 'Whaleinachinashop' // change this to set the password
 
 function isUnlocked() {
   return sessionStorage.getItem(PASS_KEY) === 'granted'
