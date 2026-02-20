@@ -33,6 +33,7 @@ export default function PasswordGate({ children }) {
           <span style={styles.logoIcon}>&#9670;</span>
           <span style={styles.logoText}>Outcome HQ 2.0 - Global Meltdown</span>
         </div>
+        <p style={styles.approved}>Approved By Tugg Speedman and Les Grossman</p>
         <p style={styles.subtitle}>Enter access code to continue</p>
         <input
           type="password"
@@ -87,10 +88,17 @@ const styles = {
     color: '#5C70D6',
   },
   logoText: {
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: 700,
     color: '#FFFFFF',
     letterSpacing: '-0.02em',
+    whiteSpace: 'nowrap',
+  },
+  approved: {
+    fontSize: 13,
+    color: '#AFADAD',
+    fontStyle: 'italic',
+    marginTop: -4,
   },
   subtitle: {
     fontSize: 14,
