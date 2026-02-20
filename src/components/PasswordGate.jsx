@@ -31,7 +31,7 @@ export default function PasswordGate({ children }) {
       <form onSubmit={handleSubmit} style={styles.card}>
         <div style={styles.logoRow}>
           <span style={styles.logoIcon}>&#9670;</span>
-          <span style={styles.logoText}>OutcomeHQ</span>
+          <span style={styles.logoText}>Outcome HQ 2.0 - Global Meltdown</span>
         </div>
         <p style={styles.subtitle}>Enter access code to continue</p>
         <input
