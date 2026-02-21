@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { shopperInsights } from '../../data/shopperInsights'
-import { bg, semantic, brand } from '../../tokens/colors'
+import { semantic, brand } from '../../tokens/colors'
 import SwitchingBehaviorChart from './SwitchingBehaviorChart'
 import LoyaltySegmentsChart from './LoyaltySegmentsChart'
 import CrossPurchaseChart from './CrossPurchaseChart'
@@ -25,11 +25,7 @@ export default function ShopperInsightsTabs({ clientId }) {
 
   return (
     <div
-      className="rounded-card overflow-hidden"
-      style={{
-        backgroundColor: bg.card,
-        boxShadow: 'rgba(0, 0, 0, 0.2) 0px 1px 30px 0px',
-      }}
+      className="glass-card rounded-card overflow-hidden"
     >
       {/* Tab bar */}
       <div
@@ -45,7 +41,9 @@ export default function ShopperInsightsTabs({ clientId }) {
               className="px-4 py-2.5 text-xs font-semibold rounded-t-lg transition-all duration-150"
               style={{
                 color: active ? '#FFFFFF' : semantic.muted,
-                backgroundColor: active ? bg.base : 'transparent',
+                backgroundColor: active ? 'rgba(255,255,255,0.08)' : 'transparent',
+                backdropFilter: active ? 'blur(6px)' : 'none',
+                WebkitBackdropFilter: active ? 'blur(6px)' : 'none',
                 borderBottom: active ? `2px solid ${brand.primary}` : '2px solid transparent',
                 marginBottom: -1,
               }}

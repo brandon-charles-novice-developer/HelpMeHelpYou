@@ -54,7 +54,7 @@ describe('BasketAssociationChart — edge cases and prop variations', () => {
     expect(originalAssociations[2].item).toBe('C')
   })
 
-  it('renders card backgrounds', () => {
+  it('renders card backgrounds with glass styling', () => {
     const data = {
       title: 'Card Style',
       insight: 'Background check.',
@@ -62,7 +62,8 @@ describe('BasketAssociationChart — edge cases and prop variations', () => {
     }
     const { container } = render(<BasketAssociationChart data={data} />)
     const card = container.querySelector('.rounded-lg.p-3')
-    expect(card).toHaveStyle({ backgroundColor: '#1E1A2E' })
+    expect(card).toHaveStyle({ backgroundColor: 'rgba(255,255,255,0.05)' })
+    expect(card).toHaveStyle({ backdropFilter: 'blur(6px)' })
   })
 })
 

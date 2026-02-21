@@ -45,9 +45,9 @@ describe('ConversionChart', () => {
     expect(screen.getByTestId('responsive-container')).toBeInTheDocument()
   })
 
-  it('has card background color', () => {
+  it('has glass-card class', () => {
     const { container } = render(<ConversionChart />)
-    expect(container.firstChild).toHaveStyle({ backgroundColor: '#252040' })
+    expect(container.firstChild).toHaveClass('glass-card')
   })
 
   it('has rounded-card class', () => {
@@ -55,11 +55,9 @@ describe('ConversionChart', () => {
     expect(container.firstChild).toHaveClass('rounded-card')
   })
 
-  it('has box shadow on the card', () => {
+  it('has glass-card class for shadow styling', () => {
     const { container } = render(<ConversionChart />)
-    expect(container.firstChild).toHaveStyle({
-      boxShadow: 'rgba(0, 0, 0, 0.2) 0px 1px 30px 0px',
-    })
+    expect(container.firstChild).toHaveClass('glass-card')
   })
 
   it('legend items have muted gray color', () => {

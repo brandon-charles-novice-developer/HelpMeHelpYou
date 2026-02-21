@@ -17,11 +17,9 @@ describe('ImpactBrief — layout and structure', () => {
     expect(container.firstChild).toHaveClass('rounded-card')
   })
 
-  it('has box shadow on the card', () => {
+  it('has glass-card class on the card', () => {
     const { container } = render(<ImpactBrief />)
-    expect(container.firstChild).toHaveStyle({
-      boxShadow: 'rgba(0, 0, 0, 0.2) 0px 1px 30px 0px',
-    })
+    expect(container.firstChild).toHaveClass('glass-card')
   })
 
   it('header label has muted purple color', () => {

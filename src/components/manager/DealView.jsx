@@ -48,8 +48,7 @@ export default function DealView() {
         ].map((kpi) => (
           <div
             key={kpi.label}
-            className="rounded-card p-4"
-            style={{ backgroundColor: '#252040', boxShadow: 'rgba(0,0,0,0.15) 0px 1px 20px 0px' }}
+            className="glass-card rounded-card p-4"
           >
             <div className="text-[11px] uppercase tracking-widest font-semibold mb-2" style={{ color: '#AFADAD' }}>
               {kpi.label}
@@ -64,8 +63,7 @@ export default function DealView() {
       {/* Viewability */}
       {deal.metrics.viewability && (
         <div
-          className="rounded-card px-5 py-3 mb-5 flex items-center gap-3"
-          style={{ backgroundColor: '#252040' }}
+          className="glass-card rounded-card px-5 py-3 mb-5 flex items-center gap-3"
         >
           <span className="text-[11px] uppercase tracking-widest font-semibold" style={{ color: '#AFADAD' }}>
             Viewability
@@ -113,8 +111,7 @@ export default function DealView() {
         />
       ) : (
         <div
-          className="rounded-card overflow-hidden"
-          style={{ backgroundColor: '#252040', boxShadow: 'rgba(0,0,0,0.15) 0px 1px 20px 0px' }}
+          className="glass-card rounded-card overflow-hidden"
         >
           <div className="px-5 py-8 text-center text-sm" style={{ color: '#AFADAD' }}>
             No creatives attached to this deal

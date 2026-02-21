@@ -12,11 +12,11 @@ describe('ShopperInsightsPanel — tile structure and styling', () => {
     expect(container.firstChild).toHaveClass('fade-up-visible')
   })
 
-  it('each tile has dark background (#1E1A2E)', () => {
+  it('each tile has glass-card class', () => {
     const { container } = render(<ShopperInsightsPanel />)
     const grid = container.querySelector('.grid-cols-4')
     Array.from(grid.children).forEach((tile) => {
-      expect(tile).toHaveStyle({ backgroundColor: '#1E1A2E' })
+      expect(tile).toHaveClass('glass-card')
     })
   })
 

@@ -6,11 +6,7 @@ export default function ChannelSplitBar({ onlineSplit, inStoreSplit }) {
 
   return (
     <div
-      className="rounded-card p-4"
-      style={{
-        backgroundColor: '#252040',
-        boxShadow: 'rgba(0, 0, 0, 0.15) 0px 1px 20px 0px',
-      }}
+      className="glass-card rounded-card p-4"
     >
       <div
         className="text-[11px] uppercase tracking-widest font-semibold mb-3"

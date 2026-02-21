@@ -48,8 +48,7 @@ export default function GeoView() {
         ].map((kpi) => (
           <div
             key={kpi.label}
-            className="rounded-card p-4"
-            style={{ backgroundColor: '#252040', boxShadow: 'rgba(0,0,0,0.15) 0px 1px 20px 0px' }}
+            className="glass-card rounded-card p-4"
           >
             <div className="text-[11px] uppercase tracking-widest font-semibold mb-2" style={{ color: '#AFADAD' }}>
               {kpi.label}
@@ -66,8 +65,7 @@ export default function GeoView() {
 
       {/* New Buyer breakdown */}
       <div
-        className="rounded-card p-5"
-        style={{ backgroundColor: '#252040', boxShadow: 'rgba(0,0,0,0.15) 0px 1px 20px 0px' }}
+        className="glass-card rounded-card p-5"
       >
         <div className="text-[11px] uppercase tracking-widest font-semibold mb-4" style={{ color: '#AFADAD' }}>
           New Buyer Performance

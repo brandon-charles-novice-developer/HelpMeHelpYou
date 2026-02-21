@@ -69,10 +69,8 @@ export default function TransactionFeed() {
 
   return (
     <div
-      className="rounded-card overflow-hidden flex flex-col"
+      className="glass-card rounded-card overflow-hidden flex flex-col"
       style={{
-        backgroundColor: '#252040',
-        boxShadow: 'rgba(0, 0, 0, 0.2) 0px 1px 30px 0px',
         maxHeight: 480,
       }}
     >

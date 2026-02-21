@@ -52,11 +52,7 @@ const HIGHLIGHTS = [
 function InsightTile({ item }) {
   return (
     <div
-      className="rounded-card p-4 flex flex-col gap-3 transition-all duration-200 hover:-translate-y-0.5"
-      style={{
-        backgroundColor: '#1E1A2E',
-        boxShadow: 'rgba(0, 0, 0, 0.15) 0px 1px 20px 0px',
-      }}
+      className="glass-card rounded-card p-4 flex flex-col gap-3 transition-all duration-200 hover:-translate-y-0.5"
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import AttainLogo from './layout/AttainLogo'
+import GradientMesh from './layout/GradientMesh'
 
 const PASS_KEY = 'outcomehq_access'
 const VALID_HASH = 'Whaleinachinashop' // change this to set the password
@@ -12,7 +13,6 @@ export default function PasswordGate({ children }) {
   const [unlocked, setUnlocked] = useState(isUnlocked)
   const [value, setValue] = useState('')
   const [error, setError] = useState(false)
-  const [hover, setHover] = useState(false)
 
   if (unlocked) return children
 
@@ -30,20 +30,19 @@ export default function PasswordGate({ children }) {
 
   return (
     <div style={styles.page}>
-      {/* Purple header bar matching Attain nav */}
-      <div style={styles.header}>
-        <AttainLogo height={28} />
-      </div>
+      <GradientMesh />
 
-      {/* Hero section with purple gradient */}
-      <div style={styles.hero}>
-        <h1 style={styles.heroTitle}>Outcome HQ 2.0 - Global Meltdown</h1>
-        <p style={styles.heroApproved}>Approved By Tugg Speedman and Les Grossman</p>
-        <p style={styles.heroTagline}>Measurement for the modern marketer</p>
-      </div>
+      <div style={styles.content}>
+        {/* Logo */}
+        <div style={styles.logoWrap}>
+          <AttainLogo height={32} />
+        </div>
 
-      {/* Login card */}
-      <div style={styles.cardWrap}>
+        {/* Title */}
+        <h1 style={styles.title}>Outcome HQ 2.0</h1>
+        <p style={styles.tagline}>Measurement for the modern marketer</p>
+
+        {/* Glass card */}
         <form onSubmit={handleSubmit} style={styles.card}>
           <p style={styles.cardLabel}>Enter access code to continue</p>
           <input
@@ -52,21 +51,19 @@ export default function PasswordGate({ children }) {
             onChange={(e) => setValue(e.target.value)}
             placeholder="Access code"
             autoFocus
+            className="glass-input"
             style={{
               ...styles.input,
-              borderColor: error ? '#DC2626' : '#D1D5DB',
+              borderColor: error
+                ? 'rgba(239, 68, 68, 0.6)'
+                : undefined,
+              boxShadow: error
+                ? '0 0 20px rgba(239, 68, 68, 0.15)'
+                : undefined,
             }}
           />
           {error && <p style={styles.error}>Invalid code</p>}
-          <button
-            type="submit"
-            style={{
-              ...styles.button,
-              backgroundColor: hover ? '#4A2D7A' : '#5B3B8C',
-            }}
-            onMouseEnter={() => setHover(true)}
-            onMouseLeave={() => setHover(false)}
-          >
+          <button type="submit" style={styles.button}>
             Request Access
           </button>
           <p style={styles.footer}>Confidential Preview</p>
@@ -80,64 +77,55 @@ const styles = {
   page: {
     position: 'fixed',
     inset: 0,
+    backgroundColor: '#1E1A2E',
+    fontFamily: "'Inter', system-ui, -apple-system, sans-serif",
+    overflow: 'hidden',
+  },
+  content: {
+    position: 'relative',
+    zIndex: 1,
     display: 'flex',
     flexDirection: 'column',
-    backgroundColor: '#FFFFFF',
-    fontFamily: "'Inter', system-ui, -apple-system, sans-serif",
-    overflowY: 'auto',
-  },
-  header: {
-    display: 'flex',
     alignItems: 'center',
-    padding: '16px 40px',
-    backgroundColor: '#3D2066',
-    minHeight: 64,
+    justifyContent: 'center',
+    minHeight: '100vh',
+    padding: 20,
   },
-  hero: {
-    background: 'linear-gradient(180deg, #3D2066 0%, #6B4FA0 100%)',
-    padding: '60px 40px 80px',
-    textAlign: 'center',
+  logoWrap: {
+    marginBottom: 24,
   },
-  heroTitle: {
-    fontSize: 36,
+  title: {
+    fontSize: 32,
     fontWeight: 700,
     color: '#FFFFFF',
     margin: 0,
     letterSpacing: '-0.02em',
-    lineHeight: 1.2,
+    textAlign: 'center',
   },
-  heroApproved: {
+  tagline: {
     fontSize: 15,
-    color: 'rgba(255, 255, 255, 0.7)',
-    fontStyle: 'italic',
+    color: 'rgba(255, 255, 255, 0.5)',
     marginTop: 8,
-  },
-  heroTagline: {
-    fontSize: 18,
-    color: 'rgba(255, 255, 255, 0.85)',
-    marginTop: 16,
-    fontWeight: 400,
-  },
-  cardWrap: {
-    display: 'flex',
-    justifyContent: 'center',
-    marginTop: -40,
-    padding: '0 20px 60px',
+    marginBottom: 32,
+    textAlign: 'center',
   },
   card: {
-    width: 400,
-    padding: '36px 32px 28px',
-    backgroundColor: '#FFFFFF',
-    borderRadius: 12,
-    boxShadow: '0 4px 24px rgba(0, 0, 0, 0.12)',
+    width: 380,
+    maxWidth: '100%',
+    padding: '32px 28px 24px',
+    background: 'rgba(255, 255, 255, 0.05)',
+    WebkitBackdropFilter: 'blur(16px)',
+    backdropFilter: 'blur(16px)',
+    border: '1px solid rgba(255, 255, 255, 0.10)',
+    borderRadius: 20,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     gap: 16,
   },
   cardLabel: {
-    fontSize: 15,
-    color: '#4B5563',
+    fontSize: 14,
+    color: 'rgba(255, 255, 255, 0.6)',
     fontWeight: 500,
     margin: 0,
   },
@@ -145,17 +133,13 @@ const styles = {
     width: '100%',
     padding: '12px 16px',
     fontSize: 15,
-    backgroundColor: '#FFFFFF',
-    border: '1px solid #D1D5DB',
-    borderRadius: 8,
-    color: '#111827',
-    outline: 'none',
-    transition: 'border-color 0.2s',
+    color: '#FFFFFF',
+    borderRadius: 10,
     fontFamily: 'inherit',
   },
   error: {
     fontSize: 13,
-    color: '#DC2626',
+    color: '#EF4444',
     margin: '-8px 0 0',
   },
   button: {
@@ -163,17 +147,19 @@ const styles = {
     padding: '12px 0',
     fontSize: 15,
     fontWeight: 600,
-    backgroundColor: '#5B3B8C',
+    background: 'rgba(103, 87, 158, 0.5)',
+    WebkitBackdropFilter: 'blur(8px)',
+    backdropFilter: 'blur(8px)',
     color: '#FFFFFF',
-    border: 'none',
-    borderRadius: 8,
+    border: '1px solid rgba(255, 255, 255, 0.15)',
+    borderRadius: 10,
     cursor: 'pointer',
     fontFamily: 'inherit',
-    transition: 'background-color 0.15s',
+    transition: 'background 0.2s, border-color 0.2s, box-shadow 0.2s',
   },
   footer: {
     fontSize: 12,
-    color: '#9CA3AF',
+    color: 'rgba(255, 255, 255, 0.3)',
     marginTop: 4,
   },
 }

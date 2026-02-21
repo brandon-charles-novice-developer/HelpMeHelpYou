@@ -3,7 +3,7 @@ import { useFadeIn } from '../../hooks/useFadeIn'
 import { clients } from '../../data/clients'
 import { fmt } from '../../utils/fmt'
 import SectionLabel from '../shared/SectionLabel'
-import { bg, semantic, accent } from '../../tokens/colors'
+import { semantic, accent } from '../../tokens/colors'
 
 const CTV_BENCHMARK = 0.028
 
@@ -53,11 +53,7 @@ export default function ClientPerformanceMap() {
       </SectionLabel>
 
       <div
-        className="rounded-card overflow-hidden"
-        style={{
-          backgroundColor: bg.card,
-          boxShadow: 'rgba(0, 0, 0, 0.2) 0px 1px 30px 0px',
-        }}
+        className="glass-card rounded-card overflow-hidden"
       >
         {/* Table header */}
         <div
@@ -143,6 +139,8 @@ export default function ClientPerformanceMap() {
                       style={{
                         backgroundColor: 'rgba(92, 112, 214, 0.15)',
                         color: accent.blue,
+                        WebkitBackdropFilter: 'blur(6px)',
+                        backdropFilter: 'blur(6px)',
                       }}
                     >
                       {ch}

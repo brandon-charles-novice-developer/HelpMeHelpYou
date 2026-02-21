@@ -42,10 +42,8 @@ export default function InsightPulse() {
         {pulseAlerts.map((alert) => (
           <div
             key={alert.id}
-            className="rounded-card p-4 flex gap-4 transition-all duration-200 hover:-translate-y-0.5"
+            className="glass-card rounded-card p-4 flex gap-4 transition-all duration-200 hover:-translate-y-0.5"
             style={{
-              backgroundColor: '#252040',
-              boxShadow: 'rgba(0, 0, 0, 0.15) 0px 1px 20px 0px',
               borderLeft: `3px solid ${alert.color}`,
             }}
           >

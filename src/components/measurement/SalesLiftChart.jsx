@@ -35,11 +35,7 @@ function CustomTooltip({ active, payload, label }) {
 export default function SalesLiftChart({ data }) {
   return (
     <div
-      className="rounded-card p-5"
-      style={{
-        backgroundColor: '#252040',
-        boxShadow: 'rgba(0, 0, 0, 0.2) 0px 1px 30px 0px',
-      }}
+      className="glass-card rounded-card p-5"
     >
       <div className="flex items-center justify-between mb-4">
         <div

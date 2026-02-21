@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import LevelHeader from '../../components/manager/LevelHeader'
 
@@ -25,16 +25,16 @@ describe('LevelHeader (backup — styling and layout focus)', () => {
     mockNavigate.mockClear()
   })
 
-  it('has a dark card background', () => {
+  it('has glass-card class for glassmorphism background', () => {
     const { container } = renderHeader()
     const card = container.firstChild
-    expect(card.style.backgroundColor).toBe('rgb(37, 32, 64)')
+    expect(card).toHaveClass('glass-card')
   })
 
-  it('applies box shadow to the card', () => {
+  it('has glass-card class which provides box shadow via CSS', () => {
     const { container } = renderHeader()
     const card = container.firstChild
-    expect(card.style.boxShadow).toBeTruthy()
+    expect(card).toHaveClass('glass-card')
   })
 
   it('renders title as an h2 element', () => {
@@ -49,23 +49,17 @@ describe('LevelHeader (backup — styling and layout focus)', () => {
     expect(subtitle.style.color).toBe('rgb(175, 173, 173)')
   })
 
-  it('back button changes background on hover', () => {
+  it('back button has glass-card class for hover effects via CSS', () => {
     renderHeader()
     const backBtn = screen.getByRole('button', { name: /back/i })
-
-    fireEvent.mouseEnter(backBtn)
-    expect(backBtn.style.backgroundColor).toBe('rgb(45, 39, 80)')
-
-    fireEvent.mouseLeave(backBtn)
-    expect(backBtn.style.backgroundColor).toBe('rgba(255, 255, 255, 0.06)')
+    expect(backBtn).toHaveClass('glass-card')
   })
 
   it('back button has correct initial styling', () => {
     renderHeader()
     const backBtn = screen.getByRole('button', { name: /back/i })
-    expect(backBtn.style.backgroundColor).toBe('rgba(255, 255, 255, 0.06)')
+    expect(backBtn).toHaveClass('glass-card')
     expect(backBtn.style.color).toBe('rgb(175, 173, 173)')
-    expect(backBtn.style.border).toContain('1px solid')
   })
 
   it('renders the back button text with arrow', () => {

@@ -45,8 +45,7 @@ export default function CampaignView() {
         ].map((kpi) => (
           <div
             key={kpi.label}
-            className="rounded-card p-4"
-            style={{ backgroundColor: '#252040', boxShadow: 'rgba(0,0,0,0.15) 0px 1px 20px 0px' }}
+            className="glass-card rounded-card p-4"
           >
             <div className="text-[11px] uppercase tracking-widest font-semibold mb-2" style={{ color: '#AFADAD' }}>
               {kpi.label}
@@ -73,8 +72,7 @@ export default function CampaignView() {
       <SectionLabel>Ad Groups ({adGroups.length})</SectionLabel>
 
       <div
-        className="rounded-card overflow-hidden"
-        style={{ backgroundColor: '#252040', boxShadow: 'rgba(0,0,0,0.15) 0px 1px 20px 0px' }}
+        className="glass-card rounded-card overflow-hidden"
       >
         <div
           className="grid px-5 py-3 text-[11px] uppercase tracking-widest font-semibold"

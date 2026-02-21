@@ -53,9 +53,8 @@ describe('Header — edge cases, interactions, structure', () => {
   describe('wordmark rendering', () => {
     it('outcomeHQ text contains styled "HQ" span', () => {
       render(<Header {...defaultProps} />)
-      // There are two "HQ" texts: one in logomark square, one in wordmark
       const hqElements = screen.getAllByText('HQ')
-      expect(hqElements.length).toBeGreaterThanOrEqual(2)
+      expect(hqElements.length).toBeGreaterThanOrEqual(1)
     })
 
     it('wordmark "HQ" span has blue accent color', () => {
@@ -97,9 +96,9 @@ describe('Header — edge cases, interactions, structure', () => {
       expect(container.firstChild.tagName).toBe('HEADER')
     })
 
-    it('header has border-b for visual separation', () => {
+    it('header has glass-header for visual separation', () => {
       const { container } = render(<Header {...defaultProps} />)
-      expect(container.firstChild).toHaveClass('border-b')
+      expect(container.firstChild).toHaveClass('glass-header')
     })
   })
 
@@ -107,13 +106,13 @@ describe('Header — edge cases, interactions, structure', () => {
     it('passes mode to ModeToggle correctly for executive', () => {
       render(<Header {...defaultProps} mode="executive" />)
       const executiveBtn = screen.getByText('Morning Coffee')
-      expect(executiveBtn).toHaveClass('bg-attain-primary')
+      expect(executiveBtn).toHaveClass('text-white')
     })
 
     it('passes mode to ModeToggle correctly for manager', () => {
       render(<Header {...defaultProps} mode="manager" />)
       const managerBtn = screen.getByText('Campaign Manager')
-      expect(managerBtn).toHaveClass('bg-attain-primary')
+      expect(managerBtn).toHaveClass('text-white')
     })
   })
 })

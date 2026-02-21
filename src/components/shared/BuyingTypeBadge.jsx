@@ -17,7 +17,12 @@ export default function BuyingTypeBadge({ type, label: labelOverride }) {
   return (
     <span
       className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider"
-      style={{ backgroundColor: variant.bg, color: variant.color }}
+      style={{
+        backgroundColor: variant.bg,
+        color: variant.color,
+        WebkitBackdropFilter: 'blur(6px)',
+        backdropFilter: 'blur(6px)',
+      }}
     >
       {text}
     </span>

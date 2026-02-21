@@ -44,13 +44,13 @@ describe('AppShell', () => {
     expect(screen.getByText('Tombras')).toBeInTheDocument()
   })
 
-  it('has dark background color', () => {
+  it('has relative positioning for glass layering', () => {
     const { container } = render(
       <AppShell {...defaultProps}>
         <div>Content</div>
       </AppShell>
     )
-    expect(container.firstChild).toHaveStyle({ backgroundColor: '#1E1A2E' })
+    expect(container.firstChild).toHaveClass('relative')
   })
 
   it('uses min-h-screen and flex column layout', () => {

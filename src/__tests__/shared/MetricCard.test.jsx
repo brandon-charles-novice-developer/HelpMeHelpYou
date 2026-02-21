@@ -60,14 +60,14 @@ describe('MetricCard', () => {
     expect(screen.getByText('0%')).toHaveStyle({ color: '#AFADAD' })
   })
 
-  it('uses default background when accent is false', () => {
+  it('uses glass-card class for glassmorphism', () => {
     const { container } = render(<MetricCard {...defaultProps} />)
-    expect(container.firstChild).toHaveStyle({ backgroundColor: '#252040' })
+    expect(container.firstChild).toHaveClass('glass-card')
   })
 
-  it('uses accent background when accent is true', () => {
+  it('uses glass-card class even when accent is true', () => {
     const { container } = render(<MetricCard {...defaultProps} accent={true} />)
-    expect(container.firstChild).toHaveStyle({ backgroundColor: '#2D2750' })
+    expect(container.firstChild).toHaveClass('glass-card')
   })
 
   it('applies custom className', () => {

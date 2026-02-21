@@ -23,7 +23,12 @@ export default function StatusBadge({ status, label: labelOverride, size = 'sm' 
   return (
     <span
       className={`inline-flex items-center rounded-full font-semibold uppercase tracking-wider ${padding}`}
-      style={{ backgroundColor: variant.bg, color: variant.color }}
+      style={{
+        backgroundColor: variant.bg,
+        color: variant.color,
+        WebkitBackdropFilter: 'blur(6px)',
+        backdropFilter: 'blur(6px)',
+      }}
     >
       {text}
     </span>

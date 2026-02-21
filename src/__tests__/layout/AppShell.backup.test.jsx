@@ -145,16 +145,17 @@ describe('AppShell — edge cases, animation timing, structure', () => {
       expect(container.firstChild).toHaveClass('min-h-screen')
     })
 
-    it('header comes before main in DOM order', () => {
+    it('contains gradient mesh, header, and main', () => {
       const { container } = render(
         <AppShell {...defaultProps}>
           <div>Content</div>
         </AppShell>
       )
       const root = container.firstChild
-      const children = Array.from(root.children)
-      expect(children[0].tagName).toBe('HEADER')
-      expect(children[1].tagName).toBe('MAIN')
+      const header = root.querySelector('header')
+      const main = root.querySelector('main')
+      expect(header).toBeInTheDocument()
+      expect(main).toBeInTheDocument()
     })
 
     it('main element has overflow-auto for scrolling', () => {
@@ -174,7 +175,7 @@ describe('AppShell — edge cases, animation timing, structure', () => {
           <div>Content</div>
         </AppShell>
       )
-      expect(screen.getByText('Morning Coffee')).toHaveClass('bg-attain-primary')
+      expect(screen.getByText('Morning Coffee')).toHaveClass('text-white')
     })
 
     it('Header receives mode prop (manager shows active)', () => {
@@ -183,7 +184,7 @@ describe('AppShell — edge cases, animation timing, structure', () => {
           <div>Content</div>
         </AppShell>
       )
-      expect(screen.getByText('Campaign Manager')).toHaveClass('bg-attain-primary')
+      expect(screen.getByText('Campaign Manager')).toHaveClass('text-white')
     })
   })
 

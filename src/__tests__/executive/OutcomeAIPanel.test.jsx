@@ -55,9 +55,9 @@ describe('OutcomeAIPanel', () => {
 
   it('cards are indexed starting from 1', () => {
     render(<OutcomeAIPanel />)
-    expect(screen.getByText(/OutcomeHQ AI Insight.*#1/)).toBeInTheDocument()
-    expect(screen.getByText(/OutcomeHQ AI Insight.*#2/)).toBeInTheDocument()
-    expect(screen.getByText(/OutcomeHQ AI Insight.*#3/)).toBeInTheDocument()
+    expect(screen.getByText(/Outcome HQ AI Insight.*#1/)).toBeInTheDocument()
+    expect(screen.getByText(/Outcome HQ AI Insight.*#2/)).toBeInTheDocument()
+    expect(screen.getByText(/Outcome HQ AI Insight.*#3/)).toBeInTheDocument()
   })
 })
 

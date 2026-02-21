@@ -4,10 +4,10 @@ import AttainLogo from './AttainLogo'
 export default function Header({ mode, onModeChange }) {
   return (
     <header
-      className="flex items-center justify-between px-6 py-3 border-b"
-      style={{ backgroundColor: '#1E1A2E', borderColor: 'rgba(255,255,255,0.08)' }}
+      className="flex items-center justify-between px-6 py-3 glass-header relative"
+      style={{ zIndex: 10 }}
     >
-      {/* Left: Attain logo + OutcomeHQ wordmark */}
+      {/* Left: Attain logo + Outcome HQ 2.0 wordmark */}
       <div className="flex items-center gap-4">
         <AttainLogo height={22} />
         <div
@@ -16,7 +16,18 @@ export default function Header({ mode, onModeChange }) {
         />
         <div className="flex items-center gap-2">
           <span className="text-white font-semibold text-sm tracking-tight">
-            outcome<span style={{ color: '#5C70D6' }}>HQ</span>
+            Outcome <span style={{ color: '#5C70D6' }}>HQ</span>
+          </span>
+          <span
+            className="text-[10px] px-1.5 py-0.5 rounded"
+            style={{
+              background: 'rgba(92, 112, 214, 0.15)',
+              color: '#5C70D6',
+              WebkitBackdropFilter: 'blur(4px)',
+              backdropFilter: 'blur(4px)',
+            }}
+          >
+            2.0
           </span>
           <span
             className="text-xs px-2 py-0.5 rounded"
@@ -40,7 +51,10 @@ export default function Header({ mode, onModeChange }) {
         </div>
         <div
           className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-semibold"
-          style={{ backgroundColor: '#4D4176' }}
+          style={{
+            background: 'rgba(77, 65, 118, 0.6)',
+            border: '1px solid rgba(255, 255, 255, 0.15)',
+          }}
         >
           AP
         </div>

@@ -44,8 +44,7 @@ export default function PackageView() {
         ].map((kpi) => (
           <div
             key={kpi.label}
-            className="rounded-card p-4"
-            style={{ backgroundColor: '#252040', boxShadow: 'rgba(0,0,0,0.15) 0px 1px 20px 0px' }}
+            className="glass-card rounded-card p-4"
           >
             <div className="text-[11px] uppercase tracking-widest font-semibold mb-2" style={{ color: '#AFADAD' }}>
               {kpi.label}
@@ -83,8 +82,7 @@ export default function PackageView() {
         />
       ) : (
         <div
-          className="rounded-card overflow-hidden"
-          style={{ backgroundColor: '#252040', boxShadow: 'rgba(0,0,0,0.15) 0px 1px 20px 0px' }}
+          className="glass-card rounded-card overflow-hidden"
         >
           <div className="px-5 py-8 text-center text-sm" style={{ color: '#AFADAD' }}>
             No deals attached to this package

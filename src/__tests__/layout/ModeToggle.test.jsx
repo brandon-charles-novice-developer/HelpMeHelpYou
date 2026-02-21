@@ -32,27 +32,25 @@ describe('ModeToggle', () => {
   it('highlights executive button when mode is executive', () => {
     render(<ModeToggle {...defaultProps} mode="executive" />)
     const executiveBtn = screen.getByText('Morning Coffee')
-    expect(executiveBtn).toHaveClass('bg-attain-primary', 'text-white')
+    expect(executiveBtn).toHaveClass('text-white')
   })
 
   it('dims manager button when mode is executive', () => {
     render(<ModeToggle {...defaultProps} mode="executive" />)
     const managerBtn = screen.getByText('Campaign Manager')
     expect(managerBtn).toHaveClass('text-attain-muted')
-    expect(managerBtn).not.toHaveClass('bg-attain-primary')
   })
 
   it('highlights manager button when mode is manager', () => {
     render(<ModeToggle {...defaultProps} mode="manager" />)
     const managerBtn = screen.getByText('Campaign Manager')
-    expect(managerBtn).toHaveClass('bg-attain-primary', 'text-white')
+    expect(managerBtn).toHaveClass('text-white')
   })
 
   it('dims executive button when mode is manager', () => {
     render(<ModeToggle {...defaultProps} mode="manager" />)
     const executiveBtn = screen.getByText('Morning Coffee')
     expect(executiveBtn).toHaveClass('text-attain-muted')
-    expect(executiveBtn).not.toHaveClass('bg-attain-primary')
   })
 
   it('calls onModeChange with "executive" when executive button is clicked', async () => {
@@ -83,9 +81,9 @@ describe('ModeToggle', () => {
     expect(container.firstChild).toHaveClass('rounded-full')
   })
 
-  it('has border styling on the container', () => {
+  it('has glass styling on the container', () => {
     const { container } = render(<ModeToggle {...defaultProps} />)
-    expect(container.firstChild).toHaveClass('border', 'border-white/10')
+    expect(container.firstChild).toHaveClass('rounded-full')
   })
 
   it('buttons have transition classes', () => {

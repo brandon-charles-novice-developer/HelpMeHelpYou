@@ -53,8 +53,7 @@ export default function CreativeView() {
         ].map((kpi) => (
           <div
             key={kpi.label}
-            className="rounded-card p-4"
-            style={{ backgroundColor: '#252040', boxShadow: 'rgba(0,0,0,0.15) 0px 1px 20px 0px' }}
+            className="glass-card rounded-card p-4"
           >
             <div className="text-[11px] uppercase tracking-widest font-semibold mb-2" style={{ color: '#AFADAD' }}>
               {kpi.label}
@@ -76,7 +75,7 @@ export default function CreativeView() {
             <span
               key={tag}
               className="text-[11px] px-2.5 py-1 rounded-full"
-              style={{ backgroundColor: 'rgba(103,87,158,0.2)', color: '#C4B5FD' }}
+              style={{ backgroundColor: 'rgba(103,87,158,0.2)', color: '#C4B5FD', backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)' }}
             >
               {tag}
             </span>
@@ -112,8 +111,7 @@ export default function CreativeView() {
         />
       ) : (
         <div
-          className="rounded-card overflow-hidden"
-          style={{ backgroundColor: '#252040', boxShadow: 'rgba(0,0,0,0.15) 0px 1px 20px 0px' }}
+          className="glass-card rounded-card overflow-hidden"
         >
           <div className="px-5 py-8 text-center text-sm" style={{ color: '#AFADAD' }}>
             No geo data available for this creative

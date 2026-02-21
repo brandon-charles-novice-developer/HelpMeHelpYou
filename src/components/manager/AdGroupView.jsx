@@ -49,8 +49,7 @@ export default function AdGroupView() {
       <div className="grid grid-cols-3 gap-4 mb-5">
         {/* Audience overview card */}
         <div
-          className="col-span-2 rounded-card p-5"
-          style={{ backgroundColor: '#252040', boxShadow: 'rgba(0,0,0,0.15) 0px 1px 20px 0px' }}
+          className="glass-card col-span-2 rounded-card p-5"
         >
           <div className="text-[11px] uppercase tracking-widest font-semibold mb-4" style={{ color: '#AFADAD' }}>
             Outcome Audience Detail
@@ -91,7 +90,7 @@ export default function AdGroupView() {
                 <div
                   key={w.window}
                   className="rounded-lg p-3 text-center"
-                  style={{ backgroundColor: '#1E1A2E' }}
+                  style={{ backgroundColor: 'rgba(30, 26, 46, 0.6)', backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)' }}
                 >
                   <div className="text-[11px] font-semibold mb-1" style={{ color: '#AFADAD' }}>
                     {w.window}
@@ -113,8 +112,7 @@ export default function AdGroupView() {
 
         {/* Metrics card */}
         <div
-          className="rounded-card p-5 flex flex-col gap-4"
-          style={{ backgroundColor: '#252040', boxShadow: 'rgba(0,0,0,0.15) 0px 1px 20px 0px' }}
+          className="glass-card rounded-card p-5 flex flex-col gap-4"
         >
           <div className="text-[11px] uppercase tracking-widest font-semibold" style={{ color: '#AFADAD' }}>
             Performance
@@ -135,8 +133,7 @@ export default function AdGroupView() {
       {/* Packages */}
       <SectionLabel>Packages ({packages.length || 0})</SectionLabel>
       <div
-        className="rounded-card overflow-hidden"
-        style={{ backgroundColor: '#252040', boxShadow: 'rgba(0,0,0,0.15) 0px 1px 20px 0px' }}
+        className="glass-card rounded-card overflow-hidden"
       >
         {packages.length > 0 ? (
           <>

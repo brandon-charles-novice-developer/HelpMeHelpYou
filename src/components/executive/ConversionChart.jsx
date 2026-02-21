@@ -50,11 +50,7 @@ export default function ConversionChart() {
   return (
     <div
       ref={ref}
-      className={`rounded-card p-6 ${className}`}
-      style={{
-        backgroundColor: '#252040',
-        boxShadow: 'rgba(0, 0, 0, 0.2) 0px 1px 30px 0px',
-      }}
+      className={`glass-card rounded-card p-6 ${className}`}
     >
       <SectionLabel right={
         <div className="flex items-center gap-4 text-[11px]">

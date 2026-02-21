@@ -28,13 +28,7 @@ export default function ManagerHome() {
         {clients.map((client) => (
           <button
             key={client.id}
-            className="rounded-card p-5 text-left transition-all duration-200 hover:-translate-y-0.5"
-            style={{
-              backgroundColor: '#252040',
-              boxShadow: 'rgba(0, 0, 0, 0.2) 0px 1px 30px 0px',
-            }}
-            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#2D2750' }}
-            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#252040' }}
+            className="glass-card rounded-card p-5 text-left transition-all duration-200 hover:-translate-y-0.5"
             onClick={() => navigate(`/manager/${client.id}`)}
           >
             <div
@@ -63,11 +57,7 @@ export default function ManagerHome() {
       {/* Detailed client table */}
       <SectionLabel>All Clients</SectionLabel>
       <div
-        className="rounded-card overflow-hidden"
-        style={{
-          backgroundColor: '#252040',
-          boxShadow: 'rgba(0, 0, 0, 0.15) 0px 1px 20px 0px',
-        }}
+        className="glass-card rounded-card overflow-hidden"
       >
         <div
           className="grid px-5 py-3 text-[11px] uppercase tracking-widest font-semibold"

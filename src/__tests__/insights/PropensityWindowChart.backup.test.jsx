@@ -62,12 +62,13 @@ describe('PropensityWindowChart — score color thresholds and edge cases', () =
     expect(screen.getByText('1,234,567 likely converters')).toBeInTheDocument()
   })
 
-  it('renders converter card backgrounds', () => {
+  it('renders converter card backgrounds with glass styling', () => {
     const data = makeData([{ window: '10d', score: 88, converters: 100000, label: 'High' }])
     const { container } = render(<PropensityWindowChart data={data} />)
     const cards = container.querySelectorAll('.rounded-lg.p-3.text-center')
     expect(cards).toHaveLength(1)
-    expect(cards[0]).toHaveStyle({ backgroundColor: '#1E1A2E' })
+    expect(cards[0]).toHaveStyle({ backgroundColor: 'rgba(255,255,255,0.05)' })
+    expect(cards[0]).toHaveStyle({ backdropFilter: 'blur(6px)' })
   })
 })
 

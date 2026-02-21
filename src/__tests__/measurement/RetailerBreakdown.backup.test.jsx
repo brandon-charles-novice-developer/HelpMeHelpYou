@@ -46,10 +46,10 @@ describe('RetailerBreakdown — edge cases and styling', () => {
     })
   })
 
-  it('applies correct card background', () => {
+  it('applies glass-card styling', () => {
     const retailers = [{ retailer: 'Test', share: 0.30 }]
     const { container } = render(<RetailerBreakdown retailers={retailers} />)
-    expect(container.firstChild).toHaveStyle({ backgroundColor: '#252040' })
+    expect(container.firstChild).toHaveClass('glass-card')
   })
 
   it('renders heading with uppercase tracking-widest class', () => {

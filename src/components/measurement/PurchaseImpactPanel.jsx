@@ -1,7 +1,7 @@
 // Purchase Impact Measurement — core In-Flight metrics panel
 // Shows: CVR vs benchmark, New Buyer CVR, ROAS, CPA, Sales Driven, Avg Transaction
 
-import { bg, semantic, accent } from '../../tokens/colors'
+import { semantic, accent } from '../../tokens/colors'
 
 const CTV_BENCHMARK = 0.028
 
@@ -80,11 +80,7 @@ function CvrBar({ cvr }) {
 export default function PurchaseImpactPanel({ metrics }) {
   return (
     <div
-      className="rounded-card p-5"
-      style={{
-        backgroundColor: bg.card,
-        boxShadow: 'rgba(0, 0, 0, 0.2) 0px 1px 30px 0px',
-      }}
+      className="glass-card rounded-card p-5"
     >
       <div
         className="text-[11px] uppercase tracking-widest font-semibold mb-4"

@@ -44,22 +44,25 @@ describe('OutcomeAICard', () => {
     expect(zones).toHaveLength(3)
   })
 
-  it('Zone 1 has dark background (#1E1A2E)', () => {
+  it('Zone 1 has glassmorphism background', () => {
     const { container } = render(<OutcomeAICard card={mockCard} />)
     const zone1 = container.firstChild.children[0]
-    expect(zone1).toHaveStyle({ backgroundColor: '#1E1A2E' })
+    expect(zone1).toHaveStyle({ background: 'rgba(30, 26, 46, 0.60)' })
+    expect(zone1).toHaveStyle({ backdropFilter: 'blur(14px)' })
   })
 
-  it('Zone 2 has purple background (#4D4176)', () => {
+  it('Zone 2 has glassmorphism background', () => {
     const { container } = render(<OutcomeAICard card={mockCard} />)
     const zone2 = container.firstChild.children[1]
-    expect(zone2).toHaveStyle({ backgroundColor: '#4D4176' })
+    expect(zone2).toHaveStyle({ background: 'rgba(77, 65, 118, 0.40)' })
+    expect(zone2).toHaveStyle({ backdropFilter: 'blur(12px)' })
   })
 
-  it('Zone 3 has card surface background (#252040)', () => {
+  it('Zone 3 has glassmorphism background', () => {
     const { container } = render(<OutcomeAICard card={mockCard} />)
     const zone3 = container.firstChild.children[2]
-    expect(zone3).toHaveStyle({ backgroundColor: '#252040' })
+    expect(zone3).toHaveStyle({ background: 'rgba(37, 32, 64, 0.50)' })
+    expect(zone3).toHaveStyle({ backdropFilter: 'blur(14px)' })
   })
 
   it('displays "Recommendation" section label', () => {
@@ -74,12 +77,12 @@ describe('OutcomeAICard', () => {
 
   it('shows index number in insight header when index > 0', () => {
     render(<OutcomeAICard card={mockCard} index={2} />)
-    expect(screen.getByText(/OutcomeHQ AI Insight/)).toHaveTextContent('#2')
+    expect(screen.getByText(/Outcome HQ AI Insight/)).toHaveTextContent('#2')
   })
 
   it('does not show index number when index is 0 (default)', () => {
     render(<OutcomeAICard card={mockCard} index={0} />)
-    const header = screen.getByText(/OutcomeHQ AI Insight/)
+    const header = screen.getByText(/Outcome HQ AI Insight/)
     expect(header.textContent).not.toContain('#')
   })
 

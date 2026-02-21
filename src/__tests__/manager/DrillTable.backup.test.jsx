@@ -28,11 +28,11 @@ describe('DrillTable (backup — styling and grid layout focus)', () => {
     })
   })
 
-  it('has dark card background', () => {
+  it('has glass-card class', () => {
     const { container } = render(<DrillTable columns={columns} rows={rows} />)
 
     const wrapper = container.firstChild
-    expect(wrapper.style.backgroundColor).toBe('rgb(37, 32, 64)')
+    expect(wrapper).toHaveClass('glass-card')
   })
 
   it('rows have row-hover class for CSS hover', () => {

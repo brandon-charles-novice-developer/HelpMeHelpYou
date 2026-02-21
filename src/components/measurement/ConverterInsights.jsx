@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
-import { bg, semantic, tooltipStyle } from '../../tokens/colors'
+import { semantic, tooltipStyle } from '../../tokens/colors'
 
 const DEMO_TABS = ['Age', 'Gender', 'HHI', 'Generation', 'Homeownership', 'Education', 'Children in HH', 'Marital Status']
 
@@ -69,11 +69,7 @@ export default function ConverterInsights({ data }) {
 
   return (
     <div
-      className="rounded-card p-5"
-      style={{
-        backgroundColor: bg.card,
-        boxShadow: 'rgba(0, 0, 0, 0.2) 0px 1px 30px 0px',
-      }}
+      className="glass-card rounded-card p-5"
     >
       <div className="flex items-center justify-between mb-4">
         <div
@@ -87,9 +83,11 @@ export default function ConverterInsights({ data }) {
             onClick={() => setShowingPsycho(false)}
             className="px-3 py-1 rounded-full text-xs font-semibold transition-all"
             style={{
-              backgroundColor: !showingPsycho ? '#67579E' : 'transparent',
+              backgroundColor: !showingPsycho ? 'rgba(103,87,158,0.45)' : 'rgba(255,255,255,0.06)',
+              backdropFilter: 'blur(6px)',
+              WebkitBackdropFilter: 'blur(6px)',
               color: !showingPsycho ? '#FFFFFF' : semantic.muted,
-              border: '1px solid #4D4176',
+              border: '1px solid rgba(255,255,255,0.10)',
             }}
           >
             Demographics
@@ -98,9 +96,11 @@ export default function ConverterInsights({ data }) {
             onClick={() => setShowingPsycho(true)}
             className="px-3 py-1 rounded-full text-xs font-semibold transition-all"
             style={{
-              backgroundColor: showingPsycho ? '#67579E' : 'transparent',
+              backgroundColor: showingPsycho ? 'rgba(103,87,158,0.45)' : 'rgba(255,255,255,0.06)',
+              backdropFilter: 'blur(6px)',
+              WebkitBackdropFilter: 'blur(6px)',
               color: showingPsycho ? '#FFFFFF' : semantic.muted,
-              border: '1px solid #4D4176',
+              border: '1px solid rgba(255,255,255,0.10)',
             }}
           >
             Psychographics
@@ -148,6 +148,8 @@ export default function ConverterInsights({ data }) {
                     className="text-xs px-2.5 py-1 rounded-full"
                     style={{
                       backgroundColor: 'rgba(196, 181, 253, 0.1)',
+                      backdropFilter: 'blur(6px)',
+                      WebkitBackdropFilter: 'blur(6px)',
                       color: '#C4B5FD',
                       border: '1px solid rgba(196,181,253,0.2)',
                     }}

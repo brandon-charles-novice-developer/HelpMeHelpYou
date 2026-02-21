@@ -45,9 +45,9 @@ describe('ChannelSplitBar', () => {
     expect(screen.getByText('6%')).toBeInTheDocument()
   })
 
-  it('applies correct card background color', () => {
+  it('applies glass-card styling', () => {
     const { container } = render(<ChannelSplitBar onlineSplit={0.50} inStoreSplit={0.50} />)
-    expect(container.firstChild).toHaveStyle({ backgroundColor: '#252040' })
+    expect(container.firstChild).toHaveClass('glass-card')
   })
 })
 

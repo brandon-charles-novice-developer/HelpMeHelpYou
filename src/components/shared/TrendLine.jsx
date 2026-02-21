@@ -17,8 +17,10 @@ export default function TrendLine({ data, color = '#5C70D6', width = 80, height 
         />
         <Tooltip
           contentStyle={{
-            backgroundColor: '#1E1A2E',
-            border: '1px solid #4D4176',
+            backgroundColor: 'rgba(30, 26, 46, 0.85)',
+            WebkitBackdropFilter: 'blur(12px)',
+            backdropFilter: 'blur(12px)',
+            border: '1px solid rgba(255, 255, 255, 0.10)',
             borderRadius: 8,
             fontSize: 11,
             color: '#FFFFFF',

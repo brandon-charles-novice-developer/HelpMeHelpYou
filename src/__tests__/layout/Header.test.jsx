@@ -24,10 +24,10 @@ describe('Header', () => {
     expect(hqElements.length).toBeGreaterThanOrEqual(1)
   })
 
-  it('displays the outcomeHQ wordmark', () => {
+  it('displays the Outcome HQ wordmark', () => {
     render(<Header {...defaultProps} />)
-    // The wordmark is split: "outcome" + "HQ" span
-    expect(screen.getByText(/outcome/)).toBeInTheDocument()
+    // The wordmark is split: "Outcome " + "HQ" span
+    expect(screen.getByText(/Outcome/)).toBeInTheDocument()
   })
 
   it('displays the Tombras agency badge', () => {
@@ -57,15 +57,14 @@ describe('Header', () => {
     expect(screen.getByText('Campaign Manager')).toBeInTheDocument()
   })
 
-  it('has dark background color', () => {
+  it('has glass-header class for glassmorphism', () => {
     const { container } = render(<Header {...defaultProps} />)
-    expect(container.firstChild).toHaveStyle({ backgroundColor: '#1E1A2E' })
+    expect(container.firstChild).toHaveClass('glass-header')
   })
 
-  it('has bottom border', () => {
+  it('has z-index for glass layering', () => {
     const { container } = render(<Header {...defaultProps} />)
-    expect(container.firstChild).toHaveClass('border-b')
-    expect(container.firstChild).toHaveStyle({ borderColor: 'rgba(255,255,255,0.08)' })
+    expect(container.firstChild).toHaveStyle({ zIndex: '10' })
   })
 
   it('uses flex layout with justify-between for 3-column layout', () => {
@@ -78,15 +77,10 @@ describe('Header', () => {
     expect(container.firstChild).toHaveClass('px-6', 'py-3')
   })
 
-  it('logomark has purple background', () => {
+  it('renders the Attain logo image', () => {
     render(<Header {...defaultProps} />)
-    // The "HQ" in the square logomark
-    const hqElements = screen.getAllByText('HQ')
-    // Find the one that's the logomark (inside a div with bg)
-    const logomark = hqElements.find(
-      (el) => el.classList.contains('w-7') && el.classList.contains('h-7')
-    )
-    expect(logomark).toHaveStyle({ backgroundColor: '#67579E' })
+    const logo = screen.getByAltText('Attain')
+    expect(logo).toBeInTheDocument()
   })
 
   it('Tombras badge has purple-tinted background', () => {
@@ -96,10 +90,10 @@ describe('Header', () => {
     expect(tombras).toHaveStyle({ color: '#C4B5FD' })
   })
 
-  it('avatar has purple background', () => {
+  it('avatar has glass-style background', () => {
     render(<Header {...defaultProps} />)
     const avatar = screen.getByText('AP')
-    expect(avatar).toHaveStyle({ backgroundColor: '#4D4176' })
+    expect(avatar).toHaveStyle({ background: 'rgba(77, 65, 118, 0.6)' })
   })
 })
 

@@ -35,9 +35,9 @@ describe('SalesLiftChart', () => {
     expect(container.querySelector('.recharts-responsive-container')).toBeInTheDocument()
   })
 
-  it('applies correct card styling', () => {
+  it('applies glass-card styling', () => {
     const { container } = render(<SalesLiftChart data={mockData} />)
-    expect(container.firstChild).toHaveStyle({ backgroundColor: '#252040' })
+    expect(container.firstChild).toHaveClass('glass-card')
   })
 
   it('renders with empty data array', () => {

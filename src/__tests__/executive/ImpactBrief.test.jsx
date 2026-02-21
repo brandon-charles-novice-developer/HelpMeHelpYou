@@ -33,9 +33,9 @@ describe('ImpactBrief', () => {
     expect(container.firstChild).toHaveStyle({ borderLeft: '3px solid #67579E' })
   })
 
-  it('has the card background color', () => {
+  it('has the glass-card class', () => {
     const { container } = render(<ImpactBrief />)
-    expect(container.firstChild).toHaveStyle({ backgroundColor: '#252040' })
+    expect(container.firstChild).toHaveClass('glass-card')
   })
 
   it('displays the morning brief header with Tombras name', () => {

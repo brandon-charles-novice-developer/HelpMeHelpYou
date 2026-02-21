@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Header from './Header'
+import GradientMesh from './GradientMesh'
 
 export default function AppShell({ mode, onModeChange, children }) {
   const [visible, setVisible] = useState(true)
@@ -21,11 +22,13 @@ export default function AppShell({ mode, onModeChange, children }) {
   }, [mode, displayedMode])
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#1E1A2E' }}>
+    <div className="min-h-screen flex flex-col relative">
+      <GradientMesh />
       <Header mode={mode} onModeChange={onModeChange} />
       <main
-        className="flex-1 overflow-auto transition-all duration-200"
+        className="flex-1 overflow-auto transition-all duration-200 relative"
         style={{
+          zIndex: 1,
           opacity: visible ? 1 : 0,
           transform: visible ? 'scale(1)' : 'scale(0.99)',
         }}

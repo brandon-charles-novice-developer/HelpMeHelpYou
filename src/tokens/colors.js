@@ -1,4 +1,4 @@
-// Attain OutcomeHQ — exact color values from the live dashboard
+// Attain Outcome HQ 2.0 — exact color values from the live dashboard
 
 export const bg = {
   base:    '#1E1A2E',
@@ -34,9 +34,23 @@ export const chart = {
   caution:   '#F59E0B',
 }
 
+export const glass = {
+  card:           'rgba(255, 255, 255, 0.05)',
+  cardHover:      'rgba(255, 255, 255, 0.08)',
+  cardBorder:     'rgba(255, 255, 255, 0.10)',
+  cardBorderHover:'rgba(255, 255, 255, 0.15)',
+  headerBg:       'rgba(30, 26, 46, 0.70)',
+  zone1:          'rgba(30, 26, 46, 0.60)',
+  zone2:          'rgba(77, 65, 118, 0.40)',
+  zone3:          'rgba(37, 32, 64, 0.50)',
+  blur:           'blur(14px)',
+}
+
 export const tooltipStyle = {
-  backgroundColor: '#1E1A2E',
-  border: '1px solid #4D4176',
+  backgroundColor: 'rgba(30, 26, 46, 0.85)',
+  backdropFilter: 'blur(12px)',
+  WebkitBackdropFilter: 'blur(12px)',
+  border: '1px solid rgba(255, 255, 255, 0.10)',
   borderRadius: 12,
   fontSize: 12,
   color: '#FFFFFF',

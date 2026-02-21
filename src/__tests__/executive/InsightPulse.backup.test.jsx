@@ -20,11 +20,11 @@ describe('InsightPulse — card structure and styling', () => {
     })
   })
 
-  it('each alert card has dark background', () => {
+  it('each alert card has glass-card class', () => {
     const { container } = render(<InsightPulse />)
     const alertList = container.querySelector('.flex.flex-col.gap-3')
     Array.from(alertList.children).forEach((card) => {
-      expect(card).toHaveStyle({ backgroundColor: '#252040' })
+      expect(card).toHaveClass('glass-card')
     })
   })
 
@@ -71,13 +71,11 @@ describe('InsightPulse — card structure and styling', () => {
     expect(label).toHaveClass('uppercase', 'tracking-widest')
   })
 
-  it('each alert card has box shadow', () => {
+  it('each alert card has glass-card class for shadow styling', () => {
     const { container } = render(<InsightPulse />)
     const alertList = container.querySelector('.flex.flex-col.gap-3')
     Array.from(alertList.children).forEach((card) => {
-      expect(card).toHaveStyle({
-        boxShadow: 'rgba(0, 0, 0, 0.15) 0px 1px 20px 0px',
-      })
+      expect(card).toHaveClass('glass-card')
     })
   })
 })

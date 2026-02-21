@@ -52,7 +52,12 @@ export default function PropensityWindowChart({ data }) {
           <div
             key={w.window}
             className="rounded-lg p-3 text-center"
-            style={{ backgroundColor: '#1E1A2E' }}
+            style={{
+              backgroundColor: 'rgba(255,255,255,0.05)',
+              backdropFilter: 'blur(6px)',
+              WebkitBackdropFilter: 'blur(6px)',
+              border: '1px solid rgba(255,255,255,0.08)',
+            }}
           >
             <div className="text-[11px] font-semibold mb-1" style={{ color: '#AFADAD' }}>
               {w.window}

@@ -83,10 +83,10 @@ describe('AgencyScoreboard', () => {
     expect(container.firstChild).toHaveClass('grid-cols-5')
   })
 
-  it('applies correct background color to KPI cards', () => {
+  it('applies glass-card class to KPI cards', () => {
     const { container } = renderWithRouter(<AgencyScoreboard />)
     const firstCard = container.firstChild.children[0]
-    expect(firstCard).toHaveStyle({ backgroundColor: '#252040' })
+    expect(firstCard).toHaveClass('glass-card')
   })
 })
 

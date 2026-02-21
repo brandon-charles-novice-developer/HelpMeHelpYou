@@ -7,10 +7,8 @@ export default function ImpactBrief() {
   return (
     <div
       ref={ref}
-      className={`rounded-card p-6 ${className}`}
+      className={`glass-card rounded-card p-6 ${className}`}
       style={{
-        backgroundColor: '#252040',
-        boxShadow: 'rgba(0, 0, 0, 0.2) 0px 1px 30px 0px',
         borderLeft: '3px solid #67579E',
       }}
     >

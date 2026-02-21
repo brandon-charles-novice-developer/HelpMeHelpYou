@@ -47,7 +47,7 @@ describe('ConverterInsights — demo tab switching and client variations', () =>
   it('applies active styling to Demographics toggle when active', () => {
     render(<ConverterInsights data={converterInsights.kayak} />)
     const demoBtn = screen.getByText('Demographics')
-    expect(demoBtn).toHaveStyle({ backgroundColor: '#67579E', color: '#FFFFFF' })
+    expect(demoBtn).toHaveStyle({ backgroundColor: 'rgba(103,87,158,0.45)', color: '#FFFFFF' })
   })
 
   it('applies inactive styling to Psychographics toggle when demographics is active', () => {
@@ -63,11 +63,11 @@ describe('ConverterInsights — demo tab switching and client variations', () =>
     render(<ConverterInsights data={converterInsights.kayak} />)
     await user.click(screen.getByText('Psychographics'))
     const psychBtn = screen.getByText('Psychographics')
-    expect(psychBtn).toHaveStyle({ backgroundColor: '#67579E', color: '#FFFFFF' })
+    expect(psychBtn).toHaveStyle({ backgroundColor: 'rgba(103,87,158,0.45)', color: '#FFFFFF' })
     const demoBtn = screen.getByText('Demographics')
     expect(demoBtn).toHaveStyle({ color: '#AFADAD' })
     // Inactive demographics button should NOT have the active background
-    expect(demoBtn.style.backgroundColor).not.toBe('rgb(103, 87, 158)')
+    expect(demoBtn.style.backgroundColor).not.toBe('rgba(103, 87, 158, 0.45)')
   })
 
   it('shows all psychographic categories for Spirit', async () => {

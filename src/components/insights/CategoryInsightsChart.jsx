@@ -30,6 +30,8 @@ export default function CategoryInsightsChart({ data }) {
                         : d.index >= 130
                         ? 'rgba(92, 112, 214, 0.15)'
                         : 'rgba(175, 173, 173, 0.1)',
+                    backdropFilter: 'blur(6px)',
+                    WebkitBackdropFilter: 'blur(6px)',
                     color:
                       d.index >= 180
                         ? '#22C55E'

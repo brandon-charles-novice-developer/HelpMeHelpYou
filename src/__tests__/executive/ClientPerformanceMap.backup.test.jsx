@@ -15,10 +15,10 @@ describe('ClientPerformanceMap — structure, alerts, and pacing', () => {
     expect(table).toBeInTheDocument()
   })
 
-  it('table container has dark background', () => {
+  it('table container has glass-card class', () => {
     const { container } = renderWithRouter(<ClientPerformanceMap />)
     const table = container.querySelector('.rounded-card.overflow-hidden')
-    expect(table).toHaveStyle({ backgroundColor: '#252040' })
+    expect(table).toHaveClass('glass-card')
   })
 
   it('pacing bar shows 65% for all rows (hardcoded value)', () => {

@@ -3,11 +3,7 @@
 export default function DrillTable({ columns, rows, onRowClick }) {
   return (
     <div
-      className="rounded-card overflow-hidden"
-      style={{
-        backgroundColor: '#252040',
-        boxShadow: 'rgba(0, 0, 0, 0.15) 0px 1px 20px 0px',
-      }}
+      className="glass-card rounded-card overflow-hidden"
     >
       {/* Header */}
       <div

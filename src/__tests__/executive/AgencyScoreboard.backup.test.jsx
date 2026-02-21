@@ -38,11 +38,11 @@ describe('AgencyScoreboard — animation and edge cases', () => {
     })
   })
 
-  it('each KPI card has correct box shadow', () => {
+  it('each KPI card has glass-card class', () => {
     const { container } = render(<AgencyScoreboard />)
     const cards = container.firstChild.children
     Array.from(cards).forEach((card) => {
-      expect(card).toHaveStyle({ boxShadow: 'rgba(0, 0, 0, 0.2) 0px 1px 30px 0px' })
+      expect(card).toHaveClass('glass-card')
     })
   })
 

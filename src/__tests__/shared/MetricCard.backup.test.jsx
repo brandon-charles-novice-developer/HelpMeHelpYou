@@ -74,11 +74,9 @@ describe('MetricCard — edge cases and accessibility', () => {
     expect(container.firstChild).toHaveClass('transition-all', 'duration-200')
   })
 
-  it('applies box-shadow for depth', () => {
+  it('has glass-card class for depth via CSS', () => {
     const { container } = render(<MetricCard label="T" value="V" />)
-    expect(container.firstChild).toHaveStyle({
-      boxShadow: 'rgba(0, 0, 0, 0.2) 0px 1px 30px 0px',
-    })
+    expect(container.firstChild).toHaveClass('glass-card')
   })
 
   it('merges className without overriding base classes', () => {

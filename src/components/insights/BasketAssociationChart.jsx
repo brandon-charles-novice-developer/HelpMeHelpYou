@@ -13,7 +13,12 @@ export default function BasketAssociationChart({ data }) {
           <div
             key={item.item}
             className="flex items-center gap-4 rounded-lg p-3"
-            style={{ backgroundColor: '#1E1A2E' }}
+            style={{
+              backgroundColor: 'rgba(255,255,255,0.05)',
+              backdropFilter: 'blur(6px)',
+              WebkitBackdropFilter: 'blur(6px)',
+              border: '1px solid rgba(255,255,255,0.08)',
+            }}
           >
             <div className="flex-1 min-w-0">
               <div className="text-sm font-medium text-white truncate">{item.item}</div>

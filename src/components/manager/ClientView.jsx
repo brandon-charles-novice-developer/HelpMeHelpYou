@@ -114,8 +114,7 @@ export default function ClientView() {
       {/* Campaigns tab */}
       {activeTab === 'Campaigns' && (
         <div
-          className="rounded-card overflow-hidden"
-          style={{ backgroundColor: '#252040', boxShadow: 'rgba(0,0,0,0.15) 0px 1px 20px 0px' }}
+          className="glass-card rounded-card overflow-hidden"
         >
           <div
             className="grid px-5 py-3 text-[11px] uppercase tracking-widest font-semibold"
